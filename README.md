@@ -1,5 +1,5 @@
-# MDB project
-> This is test project.
+# Calculate App
+> The project is based on showing the table after putting some value from the form.
 
 ## Installation
 ```
