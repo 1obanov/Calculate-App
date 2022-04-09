@@ -1,0 +1,270 @@
+.section {
+  padding: 50px 0;
+
+  h1 {
+    text-align: center;
+    margin: 0 0 50px;
+  }
+}
+
+.form {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 50px;
+
+  @media(max-width: 1023px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media(max-width: 667px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__group {
+    &:last-child {
+      grid-column-start: 4;
+
+      @media(max-width: 1023px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      @media(max-width: 667px) {
+        grid-column-start: 1;
+        grid-column-end: 1;
+      }
+    }
+  }
+}
+
+.select {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    background-image: url('../img/ico-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    cursor: pointer;
+  }
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.input-price {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '$';
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  input {
+    padding-right: 40px;
+  }
+}
+
+.table {
+  display: none;
+  margin-bottom: 50px;
+
+  table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    @media(max-width: 667px) {
+      box-shadow: none;
+    }
+
+    thead {
+      @media(max-width: 667px) {
+        display: none;
+      }
+    }
+
+    tr {
+      @media(max-width: 667px) {
+        display: block;
+        margin-bottom: 25px;
+        box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+      }
+    }
+
+    td {
+      @media(max-width: 667px) {
+        display: block;
+        text-align: right;
+        border: none;
+        border-bottom: 1px solid $gray;
+      }
+
+      &:before {
+        @media(max-width: 667px) {
+          content: attr(data-label);
+          float: left;
+          font-weight: 700;
+        }
+      }
+
+      &:last-child {
+        @media(max-width: 667px) {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  padding: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  display: none;
+
+  @media(max-width: 667px) {
+    max-width: 100%;
+    padding: 20px 20px 30px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0 0 20px;
+  }
+}
+
+.table-total {
+  width: 100%;
+
+  td {
+    font-weight: 700;
+    padding: 20px;
+    width: 50%;
+
+    &:nth-child(1) {
+      text-align: left;
+
+      @media(max-width: 667px) {
+        width: 80%;
+      }
+    }
+
+    &:nth-child(2) {
+      text-align: right;
+
+      @media(max-width: 667px) {
+        width: 20%;
+      }
+    }
+  }
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.total,
+.quantity {
+  background: $orange;
+  color: $navy;
+  padding: 10px 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  min-height: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+  }
+}
+
+.alert-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $animation-duration $animation-timing-function;
+
+  &__content {
+    background: $white;
+    padding: 50px;
+    text-align: center;
+    width: 400px;
+    font-weight: 500;
+    position: relative;
+
+    @media(max-width: 667px) {
+      padding: 50px 30px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      background: $gray;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: $orange;
+      }
+
+      img {
+        width: 14px;
+        height: 14px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &.show-alert {
+    opacity: 1;
+    visibility: visible;
+  }
+}

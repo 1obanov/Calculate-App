@@ -1,0 +1,153 @@
+html {
+  font-size: $font-size;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-anchor: none;
+  font-size: $font-size;
+  font-family: $base-font;
+  line-height: $line-height;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+    transition: all $animation-duration $animation-timing-function;
+}
+
+.container {
+  --gutter: #{$gutters};
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+
+  @each $name,
+  $value in $container {
+    @if ($name=='default') {
+      max-width: calc(#{$value} + var(--gutter) * 2);
+    }
+
+    @else {
+      &._#{$name} {
+        max-width: calc(#{$value} + var(--gutter) * 2);
+      }
+    }
+  }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+label {
+  font-weight: 700;
+  margin: 0 0 7px;
+  display: inline-block;
+}
+
+input,
+select,
+button {
+  background: $white;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border: 2px solid $gray;
+  min-height: 50px;
+  font-size: 14px;
+
+  &:focus {
+    border: 2px solid $orange;
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '$'
+  }
+}
+
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+button[type='submit'],
+button {
+  text-transform: uppercase;
+  font-weight: 700;
+  background: $navy;
+  color: $white;
+  border: 1px solid $navy;
+  cursor: pointer;
+  transition: all $animation-duration $animation-timing-function;
+
+  &:hover {
+    background: $orange;
+    color: $navy;
+    border: 1px solid $orange;
+  }
+  &:focus {
+    border: 1px solid $navy;
+  }
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  th {
+    background: $light-gray;
+
+    &:nth-child(1) {
+      width: 6%;
+    }
+
+    &:nth-child(2) {
+      width: 28%;
+    }
+
+    &:nth-child(3) {
+      width: 28%;
+    }
+
+    &:nth-child(4) {
+      width: 28%;
+    }
+
+    &:nth-child(5) {
+      width: 10%;
+    }
+  }
+
+  th,
+  td {
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px solid $gray;
+  }
+
+  td {
+      font-weight: 500;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+            <h1>
+                Calculate App
+            </h1>
+
+            <form action="#!" class="form">
+                <div class="form__group">
+                    <label for="name">Name of product *</label>
+                    <input type="text" name="name" id="name" placeholder="Please enter the product">
+                </div>
+                <div class="form__group">
+                    <label for="descr">Description of product *</label>
+                    <input type="text" name="descr" id="descr" placeholder="Please enter the description">
+                </div>
+                <div class="form__group">
+                    <label for="category">Category *</label>
+                    <div class="select">
+                        <select name="category" id="category">
+                            <option value="" selected disabled>Select the category</option>
+                            <option value="1">Motherboard</option>
+                            <option value="2">Operating System</option>
+                            <option value="4">Memory</option>
+                            <option value="5">Processor</option>
+                            <option value="6">Monitor</option>
+                            <option value="7">Keyboard and Mouse</option>
+                            <option value="8">Video card</option>
+                            <option value="9">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <label for="price">Price *</label>
+                    <div class="input-price">
+                        <input type="number" name="price" id="price" min="1" placeholder="Please enter the price">
+                    </div>
+                </div>
+                <div class="form__group">
+                    <button id="submit">Add item</button>
+                </div>
+            </form>
+
+            <div class="table"></div>
+
+            <div class="info">
+                <h2 class="info__title">
+                    Totals
+                </h2>
+                <table class="table-total">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Total price:
+                            </td>
+                            <td>
+                                <div class="total-price">
+                                    <span class="sum"></span>
+                                    <span>$</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                A quantity of items: 
+                            </td>
+                            <td>
+                                <span class="qty"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="alert-popup">
+        <div class="alert-popup__content">
+            <p>
+                <strong>
+                    Please fill in all the empty fields.
+                </strong>
+            </p>
+            <a href="#!" class="close">
+                <img src="img/ico-close.svg" alt="close">
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

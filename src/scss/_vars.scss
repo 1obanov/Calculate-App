@@ -1,0 +1,35 @@
+$font-size: 16px;
+$line-height: 1.6;
+
+// Animation
+$animation-duration: .3s;
+$animation-timing-function: ease;
+
+// Colors
+$black: #000000;
+$white: #FFFFFF;
+$navy: #242434;
+$orange: #DB9457;
+$gray: #E6E6EA;
+$light-gray: #f7f7f7;
+
+// Font-family
+$base-main-font: "Montserrat";
+$base-font-sans-serif: "Arial",
+"Helvetica Neue",
+"Helvetica",
+sans-serif;
+$base-font-serif: "Times New Roman",
+"Times",
+"Baskerville",
+"Georgia",
+serif;
+$base-font: $base-main-font,
+$base-font-sans-serif;
+$accent-font: "Montserrat",
+$base-font-sans-serif;
+
+// Container
+$gutters: 20px;
+$container: ("default": 1200px,
+  "xl": 2072px);
